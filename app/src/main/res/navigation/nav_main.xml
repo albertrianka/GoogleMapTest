@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/CompanyFragment">
+
+    <fragment
+        android:id="@+id/CompanyFragment"
+        android:name="com.olsera.test.fragment.CompanyFragment"
+        android:label="@string/company_location"
+        tools:layout="@layout/fragment_company">
+
+        <action
+            android:id="@+id/action_CompanyFragment_to_AddCompanyFragment"
+            app:destination="@id/AddCompanyFragment">
+            <argument
+                android:name="idCompany"
+                app:argType="integer"
+                android:defaultValue="-1" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/AddCompanyFragment"
+        android:name="com.olsera.test.fragment.AddCompanyFragment"
+        android:label="@string/add_location"
+        tools:layout="@layout/fragment_add_company">
+        <argument
+            android:name="idCompany"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>
